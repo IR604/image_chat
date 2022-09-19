@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>イラスト掲示板</title>
+        <meta name="viewport" content="width=device-width">
+
+
+        <link rel="stylesheet" href="css/main.css">
+        </head>
+    <body>
+        <div class="header">
+            イラスト掲示板
+        </div>
+        <div class="sub">
+            <div class="make">
+                <a href="upload.html">テーマの投稿</a>
+            </div>
+            <ul>
+                <li>1</li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="title">タイトル</div>
+            <div class="box1">
+                <div class="font-zone">
+                    <b><font color="green">1.</font>名前-タイトル-xxxx-xx-xx</b>
+                </div>
+                <div class="image-zone">
+                    <img src="images/icons/icon.png"  id="avatar" alt="">
+                </div>
+            </div>
+            <div class="box2">
+                <form action="/illustupload" method="post" enctype = "multipart/form-data">
+                    <div class="fields-group">
+                        <div class="fields"><input type="name" class="inputfield" name="password" placeholder="名前"></div>
+                        <div class="fields"><input type="name" class="inputfield" name="password" placeholder="タイトル"></div>
+                        <input type="file" name="file"  accept="image/*">
+                    </div>
+                    <input type="submit" class="submit-button" value="送信">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

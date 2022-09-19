@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+.boxA::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body	{margin: 0;
+	font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;
+    background-color: #b0b0b0;
+}
+
+span{
+    color:#727272;
+}
+
+.header{
+    width: 100%;
+    height: 50px;
+    margin-right: 5px;
+    font-size: 35px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align:center;
+    background-color: #fff200;
+}
+
+.sub{float:left;
+    width: 20%;
+    padding: 10px;
+    background-color: #ffffff;
+}
+.main{float:left;
+    width: 60%;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.title{
+    font-size: 25px;
+    text-align    : center;
+    font-weight: bold;
+    border-bottom: solid 2px #b0b0b0;
+}
+.box1{
+    border-bottom: dotted 2px #727272;
+}
+.font-zone{
+    color:#727272;
+}
+
+.fields-group{
+    margin: 10px 0px;
+}
+.fields{
+    padding:5px;
+    border:1px solid #999
+}
+.inputfield{
+    border: none; /*枠線非表示*/
+    outline: none;
+    font-size: 18px;
+}
+.submit-button {
+    display       : inline-block;
+    border-radius : 10%;          /* 角丸       */
+    font-size     : 12pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 5px 8px;   /* 余白       */
+    background    : #999;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    opacity       : 1;           /* 透明度     */
+    border        : 2px solid rgb(85, 85, 85);    /* 枠の指定 */
+}
+.submit-button:hover{
+    opacity       : 0.8;         /* カーソル時透明度 */
+}
