@@ -10,22 +10,23 @@
         </head>
     <body>
         <div class="header">
-            イラスト掲示板
+            <a href="/" class="head">イラスト掲示板</a>
         </div>
         <div class="sub">
             <div class="make">
-                <a href="upload.html">テーマの投稿</a>
+                <a href="/make">テーマの投稿</a>
             </div>
             <ul>
-                <li>1</li>
-                <li>1</li>
+                <% for(var i in chats) { %>
+                    <li><a href="/ch<%-chats[i].item_id%>"><%=chats[i].name%></a></li>
+                <% } %>
             </ul>
         </div>
         <div class="main">
-            <div class="title">タイトル</div>
-            <form action="/illustupload" method="post">
+            <div class="title">掲示板作成</div>
+            <form action="/makechat" method="post">
                 <div class="fields-group">
-                    <div class="fields"><input type="name" class="inputfield" name="password" placeholder="掲示板名"></div>
+                    <div class="fields"><input type="text" class="inputfield" name="name" placeholder="掲示板名"></div>
                 </div>
                 <input type="submit" class="submit-button" value="作成">
             </form>

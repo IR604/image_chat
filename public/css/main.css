@@ -26,6 +26,10 @@ span{
     background-color: #fff200;
 }
 
+.head{
+    color:#ffffff
+}
+
 .sub{float:left;
     width: 20%;
     padding: 10px;

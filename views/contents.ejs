@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>イラスト掲示板</title>
+        <title><%=nowchat.name%></title>
         <meta name="viewport" content="width=device-width">
 
 
@@ -10,31 +10,36 @@
         </head>
     <body>
         <div class="header">
-            イラスト掲示板
+            <a href="/" class="head">イラスト掲示板</a>
         </div>
         <div class="sub">
             <div class="make">
-                <a href="upload.html">テーマの投稿</a>
+                <a href="/make">テーマの投稿</a>
             </div>
             <ul>
-                <li>1</li>
+                <% for(var i in chats) { %>
+                    <li><a href="/ch<%-chats[i].item_id%>"><%=chats[i].name%></a></li>
+                <% } %>
             </ul>
         </div>
         <div class="main">
-            <div class="title">タイトル</div>
-            <div class="box1">
-                <div class="font-zone">
-                    <b><font color="green">1.</font>名前-タイトル-xxxx-xx-xx</b>
+            <div class="title"><%=nowchat.name%></div>
+            <% for(var i in images) { %>
+                <div class="box1">
+                    <div class="font-zone">
+                        <b><font color="green"><%- i %>.</font><%=images[i].name%>-<%=images[i].title%>-<%=images[i].update_date%></b>
+                    </div>
+                    <div class="image-zone">
+                        <img src="images/<%=images[i].image_name%>">
+                    </div>
                 </div>
-                <div class="image-zone">
-                    <img src="images/icons/icon.png"  id="avatar" alt="">
-                </div>
-            </div>
+            <% } %>
             <div class="box2">
-                <form action="/illustupload" method="post" enctype = "multipart/form-data">
+                <form action="/upload_contents" method="post" enctype = "multipart/form-data">
                     <div class="fields-group">
-                        <div class="fields"><input type="name" class="inputfield" name="password" placeholder="名前"></div>
-                        <div class="fields"><input type="name" class="inputfield" name="password" placeholder="タイトル"></div>
+                        <input type="hidden" name="chat_id" value="<%=nowchat.item_id%>">
+                        <div class="fields"><input type="text" class="inputfield" name="name" placeholder="名前"></div>
+                        <div class="fields"><input type="text" class="inputfield" name="title" placeholder="タイトル"></div>
                         <input type="file" name="file"  accept="image/*">
                     </div>
                     <input type="submit" class="submit-button" value="送信">

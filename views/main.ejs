@@ -10,14 +10,16 @@
         </head>
     <body>
         <div class="header">
-            イラスト掲示板
+            <a href="/" class="head">イラスト掲示板</a>
         </div>
         <div class="sub">
             <div class="make">
-                <a href="upload.html">テーマの投稿</a>
+                <a href="/make">テーマの投稿</a>
             </div>
             <ul>
-                <li>1</li>
+                <% for(var i in chats) { %>
+                    <li><a href="/ch<%-chats[i].item_id%>"><%=chats[i].name%></a></li>
+                <% } %>
             </ul>
         </div>
         <div class="main">
@@ -25,7 +27,9 @@
             <h1>掲示板</h1>
             <div class="box2">
                 <ul>
-                    <li>1</li>
+                    <% for(var i in chats) { %>
+                        <li><a href="/ch<%-chats[i].item_id%>"><%=chats[i].name%></a></li>
+                    <% } %>
                 </ul>
             </div>
         </div>
